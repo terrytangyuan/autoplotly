@@ -5,6 +5,6 @@ test_that("autoplotly works correctly", {
 
   a <- autoplotly(prcomp(df), data = iris, colour = 'Species', label = TRUE, label.size = 3, frame = TRUE)
 
-  # Composable with ggplot
-  b <- a + ggplot2::ggtitle("This is a custom title")
+  # Composable with ggplot2
+  b <- a + ggplot2::ggtitle("This is a custom title") + ggplot2::labs(y = "Second Principal Components", x = "First Principal Components")
 })
