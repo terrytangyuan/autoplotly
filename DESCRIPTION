@@ -1,0 +1,22 @@
+Package: autoplotly
+Type: Package
+Title: autoplotly
+Version: 0.0.0.9000
+Authors@R: c(person("Yuan", "Tang", role = c("aut", "cre"), email = "terrytangyuan@gmail.com"))
+Description: autoplotly
+License: Apache License 2.0
+URL: https://github.com/terrytangyuan/autoplotly
+BugReports: https://github.com/terrytangyuan/autoplotly/issues
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 3.1)
+Imports:
+    plotly,
+    ggfortify
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.0.1
+Suggests:
+    testthat,
+    knitr
+VignetteBuilder: knitr
