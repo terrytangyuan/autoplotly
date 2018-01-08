@@ -22,6 +22,4 @@ p <- p + ggplot2::ggtitle("Principal Components Analysis") + ggplot2::labs(y = "
 p
 ```
 
-![iris_pca_example](https://github.com/terrytangyuan/autoplotly/blob/master/inst/Iris_pca_example.png)
-
 You can `autoplotly` many other statistical results automatically with the help of [ggfortify](https://github.com/sinhrks/ggfortify). A complete list can be found [here](https://github.com/sinhrks/ggfortify#coverage).
