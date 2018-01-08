@@ -13,7 +13,7 @@ style. The generated visualizations can also be easily extended using
 \pkg{ggplot2} and \pkg{plotly} syntax while staying interactive.
 }
 
-\subsection{Introduction}\label{introduction}
+\subsection{Background}\label{background}
 
 With the help of base graphics, grid graphics, and \CRANpkg{lattice}
 graphics \citep{lattice}, R users already have many plotting options to
@@ -70,30 +70,72 @@ achieve what they need. Users are able to generate beautiful
 visualizations of their statistical results produced by popular packages
 with minimal effort.
 
-The \CRANpkg{autoplotly} \citep{autoplotly} is an extension that builds
-on top of \pkg{ggplot2} and \pkg{ggfortify} to provide functionalities
-to automatically generate interactive visualizations for many popular
-statistical results supported by \pkg{ggfortify} package with
-\pkg{plotly} and \pkg{ggplot2} style. The generated visualizations can
-also be easily extended using \pkg{ggplot2} and \pkg{plotly} syntax
-while staying interactive.
-
-\subsection{Background}\label{background}
+The \CRANpkg{autoplotly} \citep{autoplotly} package is an extension
+built on top of \pkg{ggplot2}, \pkg{plotly}, and \pkg{ggfortify} to
+provide functionalities to automatically generate interactive
+visualizations for many popular statistical results supported by
+\pkg{ggfortify} package with \pkg{plotly} and \pkg{ggplot2} style. The
+generated visualizations can also be easily extended using \pkg{ggplot2}
+and \pkg{plotly} syntax while staying interactive.
 
 \subsection{Software Architecture}\label{software-architecture}
 
-This section may contain a figure such as Figure \ref{figure:rlogo}.
+The \pkg{autoplotly} package calls \pkg{ggfortify}'s \code{autoplot()}
+method that invokes an registered S3 generic functions
+\footnote{\url{http://adv-r.had.co.nz/S3.html}} for the applied object
+to create the visualizations with \pkg{pplot2} style. Next, the
+generated \code{ggplot} object is translated to \code{plotly} object
+with interactive graphical components leveraging
+\code{plotly::ggplotly}. Additional clean-up and correction for
+unneccessary and corrupted components are then performed. For example,
+if we want to generate interactive visualization for principal
+components analysis results produced from \code{prcomp(...)}, the
+following will be executed in order:
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics{Rlogo}
-  \caption{The logo of R.}
-  \label{figure:rlogo}
-\end{figure}
+\begin{itemize}
+\tightlist
+\item
+  \code{autoplotly(prcomp(...))} - calls \pkg{autoplotly}'s main
+  function
+\item
+  \code{autoplot.prcomp(prcomp(...))} - invokes the registered S3
+  generic function
+\item
+  \code{ggplotly(autoplot.prcomp(prcomp(...)))} - translates
+  \code{ggplot} object to \code{plotly} object
+\end{itemize}
 
-TODO: Hoverover metadata TODO: Zooming in details TODO: Extensibilty
-with ggplot2 TODO: Extensibility with plotly TODO: Exportability with
-export(p, ``inst/images/iris\_pca\_full.png'')
+The final object is of class \code{plotly} with the corresponding
+\code{ggplot} object as one of its attributes. It can be easily extended
+using either \pkg{plotly} or \pkg{ggplot2} style. When additional
+\pkg{ggplot2} elements or components are applied, for example:
+
+\begin{Schunk}
+\begin{Sinput}
+p <- autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris,
+  colour = 'Species', label = TRUE, label.size = 3, frame = TRUE)
+
+p <- p +
+  ggplot2::ggtitle("Principal Components Analysis") +
+  ggplot2::labs(y = "Second Principal Components", x = "First Principal Components")
+p
+\end{Sinput}
+\end{Schunk}
+
+The above example adds title and axis labels to the originally generated
+plot. When \code{`+` <- function(e1, e2)} operator is applied to a
+\code{ggplot} element as the second argument \code{e2}, e.g.
+\code{ggplot2::ggtitle(...)}, the \code{ggplot} object that we attached
+to the output of \code{autoplotly} earlier will be used as the first
+argument \code{e1}, borrowing \pkg{ggplot2}'s extensibility. Similarly,
+if we are adding \pkg{plotly} interactive components, the \code{plotly}
+object from the output \code{p} will be used instead.
+
+Users can also stack multiple plots generated from \code{autoplotly()}
+together in a single view using \code{subplot()}, two interactive
+splines visualizations with different degree of freedom are stacked into
+one single view in the following example, as shown in Figure
+\ref{figure:splines_subplot}:
 
 \begin{Schunk}
 \begin{Sinput}
@@ -110,6 +152,9 @@ subplot(
   \caption{Multiple splines visualizations with different degree of freedom.}
   \label{figure:splines_subplot}
 \end{figure}
+
+TODO: Hoverover metadata TODO: Zooming in details TODO: Exportability
+with export(p, ``inst/images/iris\_pca\_full.png'')
 
 \subsection{Illustrations}\label{illustrations}
 
