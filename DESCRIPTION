@@ -1,7 +1,7 @@
 Package: autoplotly
 Type: Package
 Title: Automatic Generation of Interactive Visualizations for Popular Statistical Results
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: person("Yuan", "Tang", role = c("aut", "cre"), email = "terrytangyuan@gmail.com")
 Description: This package provides functionalities to automatically generate interactive
              visualizations for many popular statistical results supported by ggfortify package with
@@ -16,6 +16,7 @@ LazyData: true
 Depends:
     R (>= 3.1)
 Imports:
+    ggplot2,
     plotly,
     ggfortify
 Roxygen: list(markdown = TRUE)
