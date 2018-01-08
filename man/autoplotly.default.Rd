@@ -2,7 +2,7 @@
 % Please edit documentation in R/autoplotly.R
 \name{autoplotly.default}
 \alias{autoplotly.default}
-\title{Automatic Visualization Using plotly and ggplot2}
+\title{Automatic Visualization of Popular Statistical Results Using plotly and ggplot2}
 \usage{
 \method{autoplotly}{default}(object, ..., width = NULL, height = NULL,
   tooltip = "all", dynamicTicks = FALSE, layerData = 1,
@@ -41,5 +41,14 @@ with the source argument in \code{\link[=event_data]{event_data()}} to retrieve 
 event data corresponding to a specific plot (shiny apps can have multiple plots).}
 }
 \description{
-Automatic Visualization Using plotly and ggplot2
+This function provides functionality to automatically generate interactive
+plot for many popular statistical results supported by \code{ggfortify} package using plotly and ggplot2.
+}
+\examples{
+# Automatically generate interactive plot for results produced by `stats::prcomp`
+p <- autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris, colour = 'Species', label = TRUE, label.size = 3, frame = TRUE)
+
+# You can apply additional ggplot2 elements to interactive plot built using `autoplotly()`
+p <- p + ggplot2::ggtitle("This is a custom title") + ggplot2::labs(y = "Second Principal Components", x = "First Principal Components")
+p
 }
