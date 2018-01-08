@@ -3,6 +3,8 @@
 S3method("+",plotly)
 S3method(autoplotly,default)
 export(autoplotly)
+export(export)
 import(ggfortify)
 importFrom(ggplot2,autoplot)
+importFrom(plotly,export)
 importFrom(plotly,ggplotly)

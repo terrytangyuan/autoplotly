@@ -1,0 +1,53 @@
+---
+title: autoplotly - Automatic Generation of Interactive Visualizations for Popular Statistical Results
+author:
+  - name: Yuan Tang
+    affiliation: H2O.ai
+    address:
+    - 2309 Wake Robin Drive
+    - West Lafayette, IN 47906
+    email:  terrytangyuan@gmail.com
+abstract: >
+  autoplotly is an R package that provides functionalities to automatically generate interactive visualizations for many popular statistical results supported by ggfortify package with plotly.js and ggplot2 style. The generated visualizations can also be easily extended using ggplot2 syntax while staying interactive.
+preamble: >
+  % Any extra latex you need in the preamble
+output: rticles::rjournal_article
+---
+
+## Introduction
+
+Introductory section which may include references in parentheses
+\citep{R}, or cite a reference such as \citet{R} in the text.
+
+## Section title in sentence case
+
+This section may contain a figure such as Figure \ref{figure:rlogo}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{Rlogo}
+  \caption{The logo of R.}
+  \label{figure:rlogo}
+\end{figure}
+
+## Another section
+
+There will likely be several sections, perhaps including code snippets, such as:
+
+```{r eval = FALSE}
+library(autoplotly)
+autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris, frame = TRUE, colour = 'Species')
+# export(p, "inst/images/iris_pca_full.png")
+```
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{images/iris_pca_full.png}
+  \caption{The logo of R.}
+  \label{figure:rlogo}
+\end{figure}
+
+## Summary
+
+This file is only a basic article template. For full details of _The R Journal_ style and information on how to prepare your article for submission, see the [Instructions for Authors](https://journal.r-project.org/share/author-guide.pdf).
+\bibliography{RJreferences}
