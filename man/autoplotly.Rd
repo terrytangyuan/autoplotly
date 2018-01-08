@@ -45,11 +45,11 @@ event data corresponding to a specific plot (shiny apps can have multiple plots)
 }
 \description{
 This function provides functionality to automatically generate interactive
-plot for many popular statistical results supported by \code{ggfortify} package using plotly and ggplot2.
+plot for many popular statistical results supported by \code{ggfortify} package using \code{plotly.js} and \code{ggplot2}.
 
 This package provides functionalities to automatically generate interactive visualizations for
-many popular statistical results supported by ggfortify package with plotly.js and ggplot2 style.
-The generated plot can also be easily extended using ggplot2 syntax while staying interactive.
+many popular statistical results supported by ggfortify package with \code{plotly.js} and \code{ggplot2} style.
+The generated plot can also be easily extended using \code{ggplot2} syntax while staying interactive.
 }
 \examples{
 # Automatically generate interactive plot for results produced by `stats::prcomp`
