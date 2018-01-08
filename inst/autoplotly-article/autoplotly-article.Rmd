@@ -32,6 +32,17 @@ This section may contain a figure such as Figure \ref{figure:rlogo}.
   \label{figure:rlogo}
 \end{figure}
 
+TODO: Hoverover metadata
+TODO: Zooming in details
+TODO: Extensibilty with ggplot2
+TODO: Extensibility with plotly
+TODO: Exportability with export(p, "inst/images/iris_pca_full.png")
+
+```{r eval = FALSE}
+library(splines)
+subplot(autoplotly(ns(diamonds$price, df = 6)), autoplotly(ns(diamonds$price, df = 3)), nrows = 2, margin = 0.1)
+```
+
 ## Illustrations
 
 There will likely be several sections, perhaps including code snippets, such as:
@@ -46,12 +57,6 @@ autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris, frame = TRUE, colour = 'Spe
   \caption{PCA with clolors and boundary for each class.}
   \label{figure:pca_full}
 \end{figure}
-
-TODO: Hoverover metadata
-TODO: Zooming in details
-TODO: Extensibilty with ggplot2
-TODO: Extensibility with plotly
-TODO: Exportability with export(p, "inst/images/iris_pca_full.png")
 
 Forecasting packages such as \CRANpkg{forecast} \citep{forecast}, \CRANpkg{changepoint} \citep{changepoint}, \CRANpkg{strucchange} \citep{strucchange}, and \CRANpkg{dlm} \citep{dlm}, are popular choices for statisticians and researchers. Interactive visualizations of predictions and statistical results from those packages can be generated automatically using the functions provided by \pkg{autoplotly} with the help of \pkg{ggfortify}.
 
