@@ -3,11 +3,11 @@ Type: Package
 Title: Automatic Generation of Interactive Visualizations for Popular Statistical Results
 Version: 0.1.0
 Authors@R: person("Yuan", "Tang", role = c("aut", "cre"), email = "terrytangyuan@gmail.com")
-Description: This package provides functionalities to automatically generate interactive
-             visualizations for many popular statistical results supported by `ggfortify` with
-             `plotly.js` <https://plot.ly/>  and `ggplot2` <https://ggplot2.tidyverse.org/> style.
-             The generated visualizations can also be easily extended using `ggplot2` syntax while
-             staying interactive.
+Description: Functionalities to automatically generate interactive visualizations for popular
+             statistical results supported by `ggfortify`, such as time series, PCA,
+             clustering and survival analysis, with `plotly.js` <https://plot.ly/>  and
+             `ggplot2` style. The generated visualizations can also be easily extended
+             using `ggplot2` syntax while staying interactive.
 License: Apache License 2.0
 URL: https://github.com/terrytangyuan/autoplotly
 BugReports: https://github.com/terrytangyuan/autoplotly/issues
