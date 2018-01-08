@@ -1,6 +1,6 @@
-# autoplotly - Automatic Generation of Interactive Plots for Popular Statistical Results
+# autoplotly
 
-This R package provides functionalities to automatically generate interactive plot for many
+This R package provides functionalities to automatically generate interactive visualizations for many
 popular statistical results supported by [ggfortify](https://github.com/sinhrks/ggfortify)
 package with [plotly.js](https://plot.ly) and [ggplot2](http://ggplot2.tidyverse.org/) style.
 The generated plot can also be easily extended using ggplot2 syntax while keeping the plot interactive.
