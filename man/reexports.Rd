@@ -4,6 +4,10 @@
 \name{reexports}
 \alias{reexports}
 \alias{export}
+\alias{reexports}
+\alias{\%>\%}
+\alias{reexports}
+\alias{subplot}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -11,6 +15,6 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{plotly}{\code{\link[plotly]{export}}}
+  \item{plotly}{\code{\link[plotly]{export}}, \code{\link[plotly]{\%>\%}}, \code{\link[plotly]{subplot}}}
 }}
 
