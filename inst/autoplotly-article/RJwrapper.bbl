@@ -1,0 +1,86 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bostock et~al.(2017)Bostock, Russell, Aisch, and Pearce]{d3r}
+M.~Bostock, K.~Russell, G.~Aisch, and A.~Pearce.
+\newblock \emph{d3r: 'd3.js' Utilities for R}, 2017.
+\newblock URL \url{https://CRAN.R-project.org/package=d3r}.
+\newblock R package version 0.7.1.
+
+\bibitem[Chang et~al.(2017)Chang, Cheng, Allaire, Xie, and McPherson]{shiny}
+W.~Chang, J.~Cheng, J.~Allaire, Y.~Xie, and J.~McPherson.
+\newblock \emph{shiny: Web Application Framework for R}, 2017.
+\newblock URL \url{https://CRAN.R-project.org/package=shiny}.
+\newblock R package version 1.0.5.
+
+\bibitem[Gohel(2017)]{ggiraph}
+D.~Gohel.
+\newblock \emph{ggiraph: Make 'ggplot2' Graphics Interactive}, 2017.
+\newblock URL \url{https://CRAN.R-project.org/package=ggiraph}.
+\newblock R package version 0.4.2.
+
+\bibitem[Hyndman(2015)]{forecast}
+R.~J. Hyndman.
+\newblock \emph{{forecast}: Forecasting functions for time series and linear
+  models}, 2015.
+\newblock URL \url{http://github.com/robjhyndman/forecast}.
+\newblock R package version 6.2.
+
+\bibitem[Killick et~al.(2016)Killick, Haynes, and Eckley]{changepoint}
+R.~Killick, K.~Haynes, and I.~A. Eckley.
+\newblock \emph{{changepoint}: An {R} package for changepoint analysis}, 2016.
+\newblock URL \url{http://CRAN.R-project.org/package=changepoint}.
+\newblock R package version 2.2.1.
+
+\bibitem[Petris(2010)]{dlm}
+G.~Petris.
+\newblock An {R} package for dynamic linear models.
+\newblock \emph{Journal of Statistical Software}, 36\penalty0 (12):\penalty0
+  1--16, 2010.
+\newblock URL \url{http://www.jstatsoft.org/v36/i12/}.
+
+\bibitem[Sarkar(2008)]{lattice}
+D.~Sarkar.
+\newblock \emph{Lattice: Multivariate Data Visualization with R}.
+\newblock Springer, New York, 2008.
+\newblock URL \url{http://lmdvr.r-forge.r-project.org}.
+\newblock ISBN 978-0-387-75968-5.
+
+\bibitem[Sievert et~al.()Sievert, Parmer, Hocking, Chamberlain, Ram, Corvellec,
+  and Despouy]{plotly}
+C.~Sievert, C.~Parmer, T.~Hocking, S.~Chamberlain, K.~Ram, M.~Corvellec, and
+  P.~Despouy.
+\newblock \emph{plotly: Create Interactive Web Graphics via 'plotly.js'}.
+
+\bibitem[Tang()]{autoplotly}
+Y.~Tang.
+\newblock \emph{autoplotly: Automatic Generation of Interactive Visualizations
+  for Popular Statistical Results}.
+\newblock URL \url{https://github.com/terrytangyuan/autoplotly}.
+\newblock R package version 0.1.0.
+
+\bibitem[Tang et~al.(2016)Tang, Horikoshi, and Li]{rjggfortify}
+Y.~Tang, M.~Horikoshi, and W.~Li.
+\newblock ggfortify: Unified interface to visualize statistical result of
+  popular r packages.
+\newblock \emph{The R Journal}, 8, 2016.
+\newblock URL \url{https://journal.r-project.org/}.
+
+\bibitem[Wickham(2009)]{wickham2009ggplot2}
+H.~Wickham.
+\newblock \emph{ggplot2: Elegant Graphics for Data Analysis}.
+\newblock Springer Science \& Business Media, 2009.
+
+\bibitem[Zeileis et~al.(2002)Zeileis, Leisch, Hornik, and Kleiber]{strucchange}
+A.~Zeileis, F.~Leisch, K.~Hornik, and C.~Kleiber.
+\newblock strucchange: An {R} package for testing for structural change in
+  linear regression models.
+\newblock \emph{Journal of Statistical Software}, 7\penalty0 (2):\penalty0
+  1--38, 2002.
+\newblock URL \url{http://www.jstatsoft.org/v07/i02/}.
+
+\end{thebibliography}
