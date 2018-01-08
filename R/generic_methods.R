@@ -13,13 +13,13 @@
   autoplotly(ggplot_obj)
 }
 
-#' Automatic Visualization of Popular Statistical Results Using plotly and ggplot2
+#' Automatic Visualization of Popular Statistical Results Using `plotly.js` and `ggplot2`
 #'
 #' @description This function provides functionality to automatically generate interactive
 #' plot for many popular statistical results supported by `ggfortify` package using plotly and ggplot2.
 #'
 #' @param object The object that represents your statistical result, e.g. `stats::prcomp(iris[-5])`.
-#' @param ... Arguments passed to ggfortify's autoplot function for the applied
+#' @param ... Arguments passed to `ggfortify::autoplot` function for the applied
 #'   object. For example, if your object is constructed from `stats::prcomp(iris[-5])`,
 #'   you can find the documentation for the list of additional arguments via
 #'   `?ggfortify:::autoplot.prcomp()`.
