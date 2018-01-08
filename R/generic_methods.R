@@ -1,6 +1,15 @@
 #' @export
 "+.plotly" <- function(p, ggplot_element) {
-  ggplot_obj <- p$ggplot_obj + ggplot_element
+  ggplot_obj <- tryCatch(
+    p$ggplot_obj + ggplot_element,
+    # Slightly better error message
+    error = function(e) {
+      if (grepl("Don't know how to add", e$message)) {
+        stop("You are not using ggplot2 syntax correctly.",
+             "Please visit http://ggplot2.tidyverse.org/index.html for more tutorials.")
+      }
+    }
+  )
   autoplotly(ggplot_obj)
 }
 
