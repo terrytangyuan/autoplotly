@@ -7,7 +7,7 @@ Description: Functionalities to automatically generate interactive visualization
              statistical results supported by `ggfortify`, such as time series, PCA,
              clustering and survival analysis, with `plotly.js` <https://plot.ly/>  and
              `ggplot2` style. The generated visualizations can also be easily extended
-             using `ggplot2` syntax while staying interactive.
+             using `ggplot2` and `plotly` syntax while staying interactive.
 License: Apache License 2.0
 URL: https://github.com/terrytangyuan/autoplotly
 BugReports: https://github.com/terrytangyuan/autoplotly/issues

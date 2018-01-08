@@ -8,7 +8,7 @@ author:
     - West Lafayette, IN 47906
     email:  terrytangyuan@gmail.com
 abstract: >
-  autoplotly is an R package that provides functionalities to automatically generate interactive visualizations for many popular statistical results supported by ggfortify package with plotly.js and ggplot2 style. The generated visualizations can also be easily extended using ggplot2 syntax while staying interactive.
+  The \pkg{autoplotly} package provides functionalities to automatically generate interactive visualizations for many popular statistical results supported by ggfortify package with \pkg{plotly} and \pkg{ggplot2} style. The generated visualizations can also be easily extended using \pkg{ggplot2} and \pkg{plotly} syntax while staying interactive.
 preamble: >
   % Any extra latex you need in the preamble
 output: rticles::rjournal_article
@@ -16,8 +16,16 @@ output: rticles::rjournal_article
 
 ## Introduction
 
-Introductory section which may include references in parentheses
-\citep{R}, or cite a reference such as \citet{R} in the text.
+With the help of base graphics, grid graphics, and \CRANpkg{lattice} graphics
+\citep{lattice}, R users already have many plotting options to choose from. Each has their
+own unique customization and extensibility options. Nowadays, \CRANpkg{ggplot2} has emerged
+as a popular choice for creating visualizations \citep{wickham2009ggplot2} and provides a strong programming model based on a "grammar of graphics" which enables methodical production of virtually any kind of statistical chart. The \pkg{ggplot2} package provides a suit of succinct syntax and independent components and makes it possible to describe a wide range of graphics. It's based on an object-oriented model that is modular and extensible, which becomes a widely used framework for producing statistical graphics in R.
+
+The distinct syntax of \pkg{ggplot2} makes it a definite paradigm shift from base and \pkg{lattice} graphics and presents a somewhat steep learning curve for those used to existing R charting idioms. Many industry R users, especially the users that build web applications in R by leveraging \CRANpkg{shiny} \citep{shiny} package, may not be satisfied with static plots. Those web applications often involve user interactions so that users can dive into the plots, explore areas of interest, and select relevant data points for more details. \CRANpkg{ggiraph} \citep{ggiraph} is an extention of \pkg{ggplot2} that provides building blocks for users to build interactive plots and when used within a shiny application, elements associated with an id can be selected and manipulated on client and server sides. There are also other packages such as \CRANpkg{d3r} \cite{d3r} and \CRANpkg{plotly} \cite{plotly} built on top of Javascript visualization frameworks that are totally isolated from \pkg{ggplot2} but become popular building blocks for creating interactive visualizations in R.
+
+Often times users only want to quickly iterate the process of exploring data, building statistical models, and visualizing the model results, especially the models that focus on common tasks such as clustering and time series analysis. Some of these packages provide default base \code{plot} visualizations for the data and models they generate. However, they look out-of-fashion and these components require additional transformation and clean-up before using them in \pkg{ggplot2} and each of those transformation steps must be replicated by others when they wish to produce similar charts in their analyses. Creating a central repository for common/popular transformations and default plotting idioms would reduce the amount of effort needed by all to create compelling, consistent and informative charts. The \CRANpkg{ggfortify} \citep{rjggfortify} package provides a unified \pkg{ggplot2} plotting interface to many statistics and machine-learning packages and functions in order to help these users achieve reproducibility goals with minimal effort. \pkg{ggfortify} package has a very easy-to-use and uniform programming interface that enables users to use one line of code to visualize statistical results of many popular R packages using \pkg{ggplot2} as building blocks. This helps statisticians, data scientists, and researchers avoid both repetitive work and the need to identify the correct \pkg{ggplot2} syntax to achieve what they need. Users are able to generate beautiful visualizations of their statistical results produced by popular packages with minimal effort.
+
+The \CRANpkg{autoplotly} \citep{autoplotly} is an extension that builds on top of \pkg{ggplot2} and \pkg{ggfortify} to provide functionalities to automatically generate interactive visualizations for many popular statistical results supported by \pkg{ggfortify} package with \pkg{plotly} and \pkg{ggplot2} style. The generated visualizations can also be easily extended using \pkg{ggplot2} and \pkg{plotly} syntax while staying interactive.
 
 ## Background
 
@@ -40,8 +48,19 @@ TODO: Exportability with export(p, "inst/images/iris_pca_full.png")
 
 ```{r eval = FALSE}
 library(splines)
-subplot(autoplotly(ns(diamonds$price, df = 6)), autoplotly(ns(diamonds$price, df = 3)), nrows = 2, margin = 0.1)
+subplot(
+  autoplotly(ns(diamonds$price, df = 6)),
+  autoplotly(ns(diamonds$price, df = 3)), nrows = 2, margin = 0.01)
 ```
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=145mm,scale=0.8]{images/splines_subplot.png}
+  \caption{Multiple splines visualizations with different degree of freedom.}
+  \label{figure:splines_subplot}
+\end{figure}
+
+
 
 ## Illustrations
 
