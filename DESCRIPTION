@@ -4,7 +4,7 @@ Title: Automatic Generation of Interactive Visualizations for Popular Statistica
 Version: 0.1.0
 Authors@R: person("Yuan", "Tang", role = c("aut", "cre"), email = "terrytangyuan@gmail.com")
 Description: This package provides functionalities to automatically generate interactive
-             visualizations for many popular statistical results supported by `ggfortify` package with
+             visualizations for many popular statistical results supported by `ggfortify` with
              `plotly.js` <https://plot.ly/>  and `ggplot2` <https://ggplot2.tidyverse.org/> style.
              The generated visualizations can also be easily extended using `ggplot2` syntax while
              staying interactive.
