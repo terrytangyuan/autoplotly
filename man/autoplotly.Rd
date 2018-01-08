@@ -5,7 +5,7 @@
 \alias{autoplotly}
 \alias{autoplotly}
 \alias{autoplotly-package}
-\title{Automatic Visualization of Popular Statistical Results Using plotly and ggplot2}
+\title{Automatic Visualization of Popular Statistical Results Using \code{plotly.js} and \code{ggplot2}}
 \usage{
 autoplotly(object, ..., width = NULL, height = NULL, tooltip = "all",
   dynamicTicks = FALSE, layerData = 1, originalData = TRUE,
@@ -14,7 +14,7 @@ autoplotly(object, ..., width = NULL, height = NULL, tooltip = "all",
 \arguments{
 \item{object}{The object that represents your statistical result, e.g. \code{stats::prcomp(iris[-5])}.}
 
-\item{...}{Arguments passed to ggfortify's autoplot function for the applied
+\item{...}{Arguments passed to \code{ggfortify::autoplot} function for the applied
 object. For example, if your object is constructed from \code{stats::prcomp(iris[-5])},
 you can find the documentation for the list of additional arguments via
 \code{?ggfortify:::autoplot.prcomp()}.}
