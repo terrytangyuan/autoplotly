@@ -49,3 +49,11 @@ plot for many popular statistical results supported by \code{ggfortify} package 
 
 autoplotly
 }
+\examples{
+# Automatically generate interactive plot for results produced by `stats::prcomp`
+p <- autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris, colour = 'Species', label = TRUE, label.size = 3, frame = TRUE)
+
+# You can apply additional ggplot2 elements to interactive plot built using `autoplotly()`
+p <- p + ggplot2::ggtitle("This is a custom title") + ggplot2::labs(y = "Second Principal Components", x = "First Principal Components")
+p
+}
