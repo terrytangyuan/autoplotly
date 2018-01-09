@@ -2,7 +2,13 @@
 
 S3method("+",plotly)
 S3method(autoplotly,default)
+export("%>%")
 export(autoplotly)
+export(export)
+export(subplot)
 import(ggfortify)
 importFrom(ggplot2,autoplot)
+importFrom(plotly,"%>%")
+importFrom(plotly,export)
 importFrom(plotly,ggplotly)
+importFrom(plotly,subplot)
