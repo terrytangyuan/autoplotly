@@ -16,6 +16,7 @@ LazyData: true
 Depends:
     R (>= 3.1)
 Imports:
+    methods,
     ggplot2,
     plotly,
     ggfortify
