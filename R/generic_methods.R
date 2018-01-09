@@ -5,8 +5,8 @@
     # Slightly better error message
     error = function(e) {
       if (grepl("Don't know how to add", e$message)) {
-        stop("You are not using ggplot2 syntax correctly.",
-             "Please visit http://ggplot2.tidyverse.org/index.html for more tutorials.")
+        stop("You are using ggplot2 with incorrect syntax.",
+             "Please visit http://ggplot2.tidyverse.org/index.html for tutorials.")
       }
     }
   )
@@ -24,7 +24,7 @@
 #'   you can find the documentation for the list of additional arguments via
 #'   `?ggfortify:::autoplot.prcomp()`.
 #' @inheritParams plotly::ggplotly
-#'
+#' @inheritParams plotly::subplot
 #' @export
 #' 
 #' @examples
@@ -45,6 +45,14 @@ autoplotly <- function(object,
                        dynamicTicks = FALSE,
                        layerData = 1,
                        originalData = TRUE,
-                       source = "A") {
+                       source = "A",
+                       widths = NULL,
+                       heights = NULL,
+                       margin = 0.02,
+                       shareX = TRUE,
+                       shareY = TRUE,
+                       titleX = shareX,
+                       titleY = shareY,
+                       which_layout = "merge") {
   UseMethod("autoplotly")
 }
