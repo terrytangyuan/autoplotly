@@ -9,7 +9,9 @@
 \usage{
 autoplotly(object, ..., width = NULL, height = NULL, tooltip = "all",
   dynamicTicks = FALSE, layerData = 1, originalData = TRUE,
-  source = "A")
+  source = "A", widths = NULL, heights = NULL, margin = 0.02,
+  shareX = TRUE, shareY = TRUE, titleX = shareX, titleY = shareY,
+  which_layout = "merge")
 }
 \arguments{
 \item{object}{The object that represents your statistical result, e.g. \code{stats::prcomp(iris[-5])}.}
@@ -42,6 +44,31 @@ would appear in the static ggplot2 image.}
 \item{source}{a character string of length 1. Match the value of this string
 with the source argument in \code{\link[=event_data]{event_data()}} to retrieve the
 event data corresponding to a specific plot (shiny apps can have multiple plots).}
+
+\item{widths}{relative width of each column on a 0-1 scale. By default all
+columns have an equal relative width.}
+
+\item{heights}{relative height of each row on a 0-1 scale. By default all
+rows have an equal relative height.}
+
+\item{margin}{either a single value or four values (all between 0 and 1).
+If four values are provided, the first is used as the left margin, the second
+is used as the right margin, the third is used as the top margin, and the
+fourth is used as the bottom margin.
+If a single value is provided, it will be used as all four margins.}
+
+\item{shareX}{should the x-axis be shared amongst the subplots?}
+
+\item{shareY}{should the y-axis be shared amongst the subplots?}
+
+\item{titleX}{should x-axis titles be retained?}
+
+\item{titleY}{should y-axis titles be retained?}
+
+\item{which_layout}{adopt the layout of which plot? If the default value of
+"merge" is used, layout options found later in the sequence of plots will
+override options found earlier in the sequence. This argument also accepts a
+numeric vector specifying which plots to consider when merging.}
 }
 \description{
 This function provides functionality to automatically generate interactive
@@ -49,7 +76,7 @@ plot for many popular statistical results supported by \code{ggfortify} package 
 
 This package provides functionalities to automatically generate interactive visualizations for
 many popular statistical results supported by ggfortify package with \code{plotly.js} and \code{ggplot2} style.
-The generated plot can also be easily extended using \code{ggplot2} syntax while staying interactive.
+The generated plot can also be easily extended using \code{ggplot2} and \code{plotly} syntax while staying interactive.
 }
 \examples{
 # Automatically generate interactive plot for results produced by `stats::prcomp`

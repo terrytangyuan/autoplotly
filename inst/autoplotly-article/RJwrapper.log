@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 JAN 2018 18:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 JAN 2018 12:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1433,98 +1433,133 @@ Package microtype Info: Character `textemdash ' is missing
  [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+ppl on input line 98.
+LaTeX Font Info:    Try loading font information for TS1+ppl on input line 99.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-LaTeX Font Info:    Try loading font information for TS1+zi4 on input line 116.
+LaTeX Font Info:    Try loading font information for TS1+zi4 on input line 117.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/inconsolata/ts1zi4.fd
 File: ts1zi4.fd 2016/12/29 TS1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
-(Font)              scaled to size 9.18004pt on input line 116.
+(Font)              scaled to size 9.18004pt on input line 117.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `zi4' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (30.98605pt too wide) in paragraph at lines 125--133
+Overfull \hbox (30.98605pt too wide) in paragraph at lines 126--132
 []\T1/ppl/m/n/9 (-20) The above ex-am-ple adds ti-tle and axis la-bels to the o
 rig-i-nally gen-er-ated plot. When \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 +\TS1/zi4/m/n/
 9 ` \T1/zi4/m/n/9 <-function(e1,e2)
  []
 
-<images/splines_subplot.png, id=73, 850.17625pt x 630.355pt>
-File: images/splines_subplot.png Graphic file (type png)
+<images/pca_plotly_annotation.png, id=72, 842.14626pt x 607.26875pt>
+File: images/pca_plotly_annotation.png Graphic file (type png)
 
-<use images/splines_subplot.png>
-Package pdftex.def Info: images/splines_subplot.png used on input line 151.
-(pdftex.def)             Requested size: 680.14194pt x 504.28468pt.
+<use images/pca_plotly_annotation.png>
+Package pdftex.def Info: images/pca_plotly_annotation.png used on input line 13
+5.
+(pdftex.def)             Requested size: 673.71793pt x 485.81566pt.
 
-Overfull \hbox (14.23409pt too wide) in paragraph at lines 151--152
+Overfull \hbox (14.24374pt too wide) in paragraph at lines 135--136
  [][] 
  []
 
-[2 <./images/splines_subplot.png>]
+[2 <./images/pca_plotly_annotation.png>]
 <images/iris_pca_full.png, id=82, 1076.02pt x 827.09pt>
 File: images/iris_pca_full.png Graphic file (type png)
 
 <use images/iris_pca_full.png>
-Package pdftex.def Info: images/iris_pca_full.png used on input line 172.
+Package pdftex.def Info: images/iris_pca_full.png used on input line 196.
 (pdftex.def)             Requested size: 860.8172pt x 661.6729pt.
 
-Overfull \hbox (14.21951pt too wide) in paragraph at lines 172--173
+Overfull \hbox (14.21951pt too wide) in paragraph at lines 196--197
  [][] 
  []
 
-<images/changepoint_caption.png, id=96, 847.165pt x 556.0775pt>
+<images/iris_pca_caption.png, id=85, 847.165pt x 576.1525pt>
+File: images/iris_pca_caption.png Graphic file (type png)
+
+<use images/iris_pca_caption.png>
+Package pdftex.def Info: images/iris_pca_caption.png used on input line 214.
+(pdftex.def)             Requested size: 677.73291pt x 460.9226pt.
+
+Overfull \hbox (14.23091pt too wide) in paragraph at lines 214--215
+ [][] 
+ []
+
+[3 <./images/iris_pca_full.png>]
+<images/changepoint_caption.png, id=106, 847.165pt x 556.0775pt>
 File: images/changepoint_caption.png Graphic file (type png)
 
 <use images/changepoint_caption.png>
-Package pdftex.def Info: images/changepoint_caption.png used on input line 199.
+Package pdftex.def Info: images/changepoint_caption.png used on input line 241.
 
 (pdftex.def)             Requested size: 677.73291pt x 444.86261pt.
 
-Overfull \hbox (14.23091pt too wide) in paragraph at lines 199--200
+Overfull \hbox (14.23091pt too wide) in paragraph at lines 241--242
  [][] 
  []
 
-<images/dlm_caption.png, id=98, 814.04124pt x 558.085pt>
+<images/dlm_caption.png, id=107, 814.04124pt x 558.085pt>
 File: images/dlm_caption.png Graphic file (type png)
 
 <use images/dlm_caption.png>
-Package pdftex.def Info: images/dlm_caption.png used on input line 222.
+Package pdftex.def Info: images/dlm_caption.png used on input line 248.
 (pdftex.def)             Requested size: 651.23387pt x 446.46861pt.
 
-Overfull \hbox (14.22745pt too wide) in paragraph at lines 222--223
+Overfull \hbox (14.22745pt too wide) in paragraph at lines 248--249
  [][] 
  []
 
-[3 <./images/iris_pca_full.png>] [4 <./images/changepoint_caption.png> <./image
-s/dlm_caption.png>]
-<images/strucchange_caption.png, id=120, 811.03pt x 556.0775pt>
+<images/strucchange_caption.png, id=110, 811.03pt x 556.0775pt>
 File: images/strucchange_caption.png Graphic file (type png)
 
 <use images/strucchange_caption.png>
-Package pdftex.def Info: images/strucchange_caption.png used on input line 239.
+Package pdftex.def Info: images/strucchange_caption.png used on input line 281.
 
 (pdftex.def)             Requested size: 648.82487pt x 444.86261pt.
 
-Overfull \hbox (14.22597pt too wide) in paragraph at lines 239--240
+Overfull \hbox (14.22597pt too wide) in paragraph at lines 281--282
  [][] 
  []
 
-<images/splines_caption.png, id=122, 818.05624pt x 560.0925pt>
+<images/splines_caption.png, id=112, 818.05624pt x 560.0925pt>
 File: images/splines_caption.png Graphic file (type png)
 
 <use images/splines_caption.png>
-Package pdftex.def Info: images/splines_caption.png used on input line 256.
+Package pdftex.def Info: images/splines_caption.png used on input line 298.
 (pdftex.def)             Requested size: 654.44589pt x 448.0746pt.
 
-Overfull \hbox (14.22516pt too wide) in paragraph at lines 256--257
+Overfull \hbox (14.22516pt too wide) in paragraph at lines 298--299
+ [][] 
+ []
+
+[4 <./images/iris_pca_caption.png>] [5 <./images/changepoint_caption.png> <./im
+ages/dlm_caption.png>] [6 <./images/strucchange_caption.png> <./images/splines_
+caption.png>] <images/splines_subplot.png, id=140, 850.17625pt x 630.355pt>
+File: images/splines_subplot.png Graphic file (type png)
+
+<use images/splines_subplot.png>
+Package pdftex.def Info: images/splines_subplot.png used on input line 320.
+(pdftex.def)             Requested size: 680.14194pt x 504.28468pt.
+
+Overfull \hbox (14.23409pt too wide) in paragraph at lines 320--321
+ [][] 
+ []
+
+<images/lm_caption.png, id=142, 855.195pt x 581.17125pt>
+File: images/lm_caption.png Graphic file (type png)
+
+<use images/lm_caption.png>
+Package pdftex.def Info: images/lm_caption.png used on input line 355.
+(pdftex.def)             Requested size: 684.15695pt x 464.93764pt.
+
+Overfull \hbox (14.22676pt too wide) in paragraph at lines 355--356
  [][] 
  []
 
@@ -1534,8 +1569,7 @@ Overfull \hbox (14.22516pt too wide) in paragraph at lines 256--257
 
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 1.
- [5 <./images/strucchange_caption.png>]))
-[6 <./images/splines_caption.png>]
+ [7 <./images/splines_subplot.png>]) [8 <./images/lm_caption.png>]) [9]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 27.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 27.
  (./RJwrapper.aux)
@@ -1544,17 +1578,17 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 27.
 Package rerunfilecheck Info: File `RJwrapper.out' has not changed.
 (rerunfilecheck)             Checksum: C9296679E999E7F06AF9650E84081A42;408.
 Package rerunfilecheck Info: File `RJwrapper.brf' has not changed.
-(rerunfilecheck)             Checksum: 2063360BE22C8F1AE06BFD26B533AE94;616.
+(rerunfilecheck)             Checksum: 352145A5C58D24B0B6112308ECC647B6;616.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 27.
  ) 
 Here is how much of TeX's memory you used:
- 22179 strings out of 492995
- 396766 string characters out of 6132704
- 495521 words of memory out of 5000000
- 25104 multiletter control sequences out of 15000+600000
- 44486 words of font info for 166 fonts, out of 8000000 for 9000
+ 22209 strings out of 492995
+ 397402 string characters out of 6132704
+ 496755 words of memory out of 5000000
+ 25119 multiletter control sequences out of 15000+600000
+ 44804 words of font info for 170 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,94p,447b,649s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,94p,447b,635s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1565,10 +1599,10 @@ ocal/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/20
 exlive/2017/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/
 2017/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/te
 xmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on RJwrapper.pdf (6 pages, 497830 bytes).
+Output written on RJwrapper.pdf (9 pages, 689044 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
- 38483 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 221 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 38498 words of extra memory for PDF output out of 42996 (max. 10000000)
 

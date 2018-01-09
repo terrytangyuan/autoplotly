@@ -29,7 +29,7 @@ The \CRANpkg{autoplotly} \citep{autoplotly} package is an extension built on top
 
 ## Software Architecture
 
-The \pkg{autoplotly} package calls \pkg{ggfortify}'s \code{autoplot()} method that invokes an registered S3 generic functions \footnote{\url{http://adv-r.had.co.nz/S3.html}} for the applied object to create the visualizations with \pkg{pplot2} style. Next, the generated \code{ggplot} object is translated to \code{plotly} object with interactive graphical components leveraging \code{plotly::ggplotly}. Additional clean-up and correction for unneccessary and corrupted components are then performed. For example, if we want to generate interactive visualization for principal components analysis results produced from \code{prcomp(...)}, the following will be executed in order:
+The \pkg{autoplotly} package calls \pkg{ggfortify}'s \code{autoplot()} method that invokes an registered S3 generic functions \footnote{\url{http://adv-r.had.co.nz/S3.html}} for the applied object to create the visualizations with \pkg{pplot2} style. Next, the generated \code{ggplot} object is translated to \code{plotly} object with interactive graphical components leveraging \code{plotly::ggplotly}. Additional clean-up and correction are then performed due to the feature parity between \pkg{plotly} and \pkg{ggplot2} that results in redundant and corrupted components . For example, if we want to generate interactive visualization for principal components analysis results produced from \code{prcomp(...)}, the following will be executed in order:
 
 * \code{autoplotly(prcomp(...))} - calls \pkg{autoplotly}'s main function
 * \code{autoplot.prcomp(prcomp(...))} - invokes the registered S3 generic function
@@ -48,32 +48,46 @@ p
 ```
 
 The above example adds title and axis labels to the originally generated plot. When
-\code{`+` <- function(e1, e2)} operator is applied to a \code{ggplot} element as the second argument \code{e2}, e.g. \code{ggplot2::ggtitle(...)}, the \code{ggplot} object that we attached to the output of \code{autoplotly} earlier will be used as the first argument \code{e1}, borrowing \pkg{ggplot2}'s extensibility. Similarly, if we are adding \pkg{plotly} interactive components, the \code{plotly} object from the output \code{p} will be used instead.
-
-Users can also stack multiple plots generated from \code{autoplotly()} together in a single view using \code{subplot()}, two interactive splines visualizations with different degree of freedom are stacked into one single view in the following example, as shown in Figure \ref{figure:splines_subplot}:
-
-```{r eval = FALSE}
-library(splines)
-subplot(
-  autoplotly(ns(diamonds$price, df = 6)),
-  autoplotly(ns(diamonds$price, df = 3)), nrows = 2, margin = 0.01)
-```
+\code{`+` <- function(e1, e2)} operator is applied to a \code{ggplot} element as the second argument \code{e2}, e.g. \code{ggplot2::ggtitle(...)}, the \code{ggplot} object that we attached to the output of \code{autoplotly()} earlier will be used as the first argument \code{e1}, borrowing \pkg{ggplot2}'s extensibility.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=145mm,scale=0.8]{images/splines_subplot.png}
-  \caption{Multiple splines visualizations with different degree of freedom.}
-  \label{figure:splines_subplot}
+  \includegraphics[width=145mm,scale=0.8]{images/pca_plotly_annotation.png}
+  \caption{PCA with custom \pkg{plotly} style annotation element.}
+  \label{figure:pca_plotly_annotation}
 \end{figure}
 
+Similarly, if we are adding \pkg{plotly} interactive components, the \code{plotly} object from the output of \code{autoplotly()} \code{p} will be used instead. The following code adds a custom \pkg{plotly} annotation element placed to the center of the plot with an arrow, as shown in Figure \ref{figure:pca_plotly_annotation}:
+
+```{r eval = FALSE}
+p <- autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris,
+  colour = 'Species', label = TRUE, label.size = 3, frame = TRUE)
+
+p %>% layout(annotations = list(
+  text = "Example Text",
+  font = list(
+    family = "Courier New, monospace",
+    size = 18,
+    color = "black"),
+  x = 0,
+  y = 0,
+  showarrow = TRUE))
+```
+
+\pkg{autoplotly} re-exports \code{plotly::subplot()} to enable users to stack multiple interactive plots generated via \code{autoplotly()} together. Some statistical results produce multiple plots, e.g. \code{lm()} fitted model objects, which are given extra attention and additional manipulations are performed in order to make sure users can choose whether to share axis labels, change margins, and change layout strategy while keeping the interactive control of multiple sub-plots independently.
+
+TODO: Individual-level zooming
 TODO: Hoverover metadata
 TODO: Zooming in details
 TODO: Exportability with export(p, "inst/images/iris_pca_full.png")
 
 
+
 ## Illustrations
 
-There will likely be several sections, perhaps including code snippets, such as:
+As demonstrated earlier, \pkg{autoplotly} package provides a \code{autoplotly()} function to work with objects of different classes produced from various popular statistical packages. This section highlights some of the example of automatic interactive visualizations from different types of statistical results.
+
+The \code{autoplotly()} function works for the two essential classes of objects obtained from \pkg{stats} package: \code{stats::prcomp} and \code{stats::princomp}, for example:
 
 ```{r eval = FALSE}
 autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris, frame = TRUE, colour = 'Species')
@@ -82,9 +96,21 @@ autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris, frame = TRUE, colour = 'Spe
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=145mm,scale=0.8]{images/iris_pca_full.png}
-  \caption{PCA with clolors and boundary for each class.}
-  \label{figure:pca_full}
+  \caption{PCA with clolors and boundary for each flower species.}
+  \label{figure:iris_pca_full}
 \end{figure}
+
+The above example automatically plots the PCA results from \pkg{stats} package. \code{autoplotly()} accepts parameters such as \code{frame} to draw the boundaries for each flower species and \code{colour} to indicate the column name to use to color each data points, as shown in Figure \ref{figure:iris_pca_full}.
+
+Users can also hover the mouse over to each point in the plot to see more details, such as principal components information and the species this particular data point belongs to, as shown in Figure \ref{figure:iris_pca_caption}. 
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=145mm,scale=0.8]{images/iris_pca_caption.png}
+  \caption{PCA with clolors and boundary for each principal component.}
+  \label{figure:iris_pca_caption}
+\end{figure}
+
 
 Forecasting packages such as \CRANpkg{forecast} \citep{forecast}, \CRANpkg{changepoint} \citep{changepoint}, \CRANpkg{strucchange} \citep{strucchange}, and \CRANpkg{dlm} \citep{dlm}, are popular choices for statisticians and researchers. Interactive visualizations of predictions and statistical results from those packages can be generated automatically using the functions provided by \pkg{autoplotly} with the help of \pkg{ggfortify}.
 
@@ -114,12 +140,7 @@ filtered <- dlmFilter(Nile, model)
 autoplotly(filtered)
 ```
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=145mm,scale=0.8]{images/dlm_caption.png}
-  \caption{Smoothed time series by Kalman filter.}
-  \label{figure:dlm_caption}
-\end{figure}
+
 
 Additionally, \pkg{autoplotly} plots the optimal break points where possible structural changes happen in the regression models built by the \code{strucchange::breakpoints}, shown in Figure \ref{figure:strucchange_caption}.
 
@@ -137,7 +158,7 @@ autoplotly(breakpoints(Nile ~ 1), ts.colour = "blue", ts.linetype = "dashed",
 \end{figure}
 
 
-The \code{autoplotly} can also automatically generate interactive plots for results producuced by \pkg{splines}, shown in Figure \ref{figure:splines_caption}
+The \code{autoplotly} can also automatically generate interactive plots for results producuced by \pkg{splines}, such as B-spline basis points visualization for natural cubic spline with boundary knots shown in Figure \ref{figure:splines_caption}.
 
 ```{r eval = FALSE}
 library(splines)
@@ -149,6 +170,42 @@ autoplotly(ns(diamonds$price, df = 6))
   \includegraphics[width=145mm,scale=0.8]{images/splines_caption.png}
   \caption{B-spline basis points for natural cubic spline with boundary knots.}
   \label{figure:splines_caption}
+\end{figure}
+
+Users can also stack multiple plots generated from \code{autoplotly()} together in a single view using \code{subplot()}, two interactive splines visualizations with different degree of freedom are stacked into one single view in the following example, as shown in Figure \ref{figure:splines_subplot}:
+
+```{r eval = FALSE}
+library(splines)
+subplot(
+  autoplotly(ns(diamonds$price, df = 6)),
+  autoplotly(ns(diamonds$price, df = 3)), nrows = 2, margin = 0.01)
+```
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=145mm,scale=0.8]{images/splines_subplot.png}
+  \caption{Multiple splines visualizations with different degree of freedom.}
+  \label{figure:splines_subplot}
+\end{figure}
+
+Note that the interactive control of those two plots are independent. In other words, you can control two sub-plots separately without affecting each other. Additional options for \code{subplot()} are available to select whether to share axises, titles, and which layout of the plots to adopt, etc.
+
+The \code{autoplotly()} function is able able to interpret \code{lm} fitted model objects and allows the user to select the subset of desired plots through the \code{which} parameter (just like the \code{plot.lm} function). The \code{which} parameter allows users to specify which of the subplots to display. Many plot aesthetics can be changed by using the appropriate named parameters. For example, the \code{colour} parameter is for coloring data points, the \code{smooth.colour} parameters is for coloring smoothing lines and the \code{ad.colour} parameters is for coloring the auxiliary lines, as demonstrated in Figure \ref{figure:lm_caption} and the following code:
+
+```{r eval = FALSE}
+autoplotly(
+  lm(Petal.Width ~ Petal.Length, data = iris),
+  which = c(4, 6), colour = "dodgerblue3",
+  smooth.colour = "black", smooth.linetype = "dashed",
+  ad.colour = "blue", label.size = 3, label.n = 5,
+  label.colour = "blue")
+```
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=145mm,scale=0.8]{images/lm_caption.png}
+  \caption{Linear model results.}
+  \label{figure:lm_caption}
 \end{figure}
 
 
