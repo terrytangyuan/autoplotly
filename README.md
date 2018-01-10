@@ -1,3 +1,5 @@
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/autoplotly)](https://cran.r-project.org/package=autoplotly)
+
 # autoplotly
 
 This R package provides functionalities to automatically generate interactive visualizations for many
@@ -6,6 +8,14 @@ package with [plotly.js](https://plot.ly) and [ggplot2](http://ggplot2.tidyverse
 The generated visualizations can also be easily extended using ggplot2 syntax while staying interactive.
 
 ## Installation
+
+To install the current version from CRAN, use:
+
+``` r
+install.packages("autoplotly")
+```
+
+To install from development version on Github, use:
 
 ``` r
 devtools::install_github("terrytangyuan/autoplotly")
