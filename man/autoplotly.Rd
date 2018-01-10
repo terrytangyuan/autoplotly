@@ -5,7 +5,7 @@
 \alias{autoplotly}
 \alias{autoplotly}
 \alias{autoplotly-package}
-\title{Automatic Visualization of Popular Statistical Results Using \code{plotly.js} and \code{ggplot2}}
+\title{Automatic Visualization of Popular Statistical Results Using 'plotly.js' and 'ggplot2'}
 \usage{
 autoplotly(object, ..., width = NULL, height = NULL, tooltip = "all",
   dynamicTicks = FALSE, layerData = 1, originalData = TRUE,
@@ -72,11 +72,11 @@ numeric vector specifying which plots to consider when merging.}
 }
 \description{
 This function provides functionality to automatically generate interactive
-plot for many popular statistical results supported by \code{ggfortify} package using \code{plotly.js} and \code{ggplot2}.
+plot for many popular statistical results supported by 'ggfortify' package using 'plotly.js' and 'ggplot2'.
 
 This package provides functionalities to automatically generate interactive visualizations for
-many popular statistical results supported by ggfortify package with \code{plotly.js} and \code{ggplot2} style.
-The generated plot can also be easily extended using \code{ggplot2} and \code{plotly} syntax while staying interactive.
+many popular statistical results supported by ggfortify package with 'plotly.js' and 'ggplot2' style.
+The generated plot can also be easily extended using 'ggplot2' and 'plotly' syntax while staying interactive.
 }
 \examples{
 # Automatically generate interactive plot for results produced by `stats::prcomp`
