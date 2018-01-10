@@ -2,5 +2,3 @@
 ^\.Rproj\.user$
 README.md
 ^cran-comments\.md$
-inst/autoplotly-article
-*.zip
