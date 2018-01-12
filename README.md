@@ -28,11 +28,21 @@ devtools::install_github("terrytangyuan/autoplotly")
 p <- autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris,
   colour = 'Species', label = TRUE, label.size = 3, frame = TRUE)
 
-# You can apply additional ggplot2 elements to interactive plot built using `autoplotly()`
-p <- p +
+# You can apply additional ggplot2 elements to the generated interactive plot
+p +
   ggplot2::ggtitle("Principal Components Analysis") +
   ggplot2::labs(y = "Second Principal Components", x = "First Principal Components")
-p
+
+# Or apply additional plotly elements to the generated interactive plot
+p %>% plotly::layout(annotations = list(
+  text = "Example Text",
+  font = list(
+    family = "Courier New, monospace",
+    size = 18,
+    color = "black"),
+  x = 0,
+  y = 0,
+  showarrow = TRUE))
 ```
 
 You can `autoplotly` many other statistical results automatically with the help of [ggfortify](https://github.com/sinhrks/ggfortify). A complete list can be found [here](https://github.com/sinhrks/ggfortify#coverage).
