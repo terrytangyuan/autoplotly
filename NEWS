@@ -1,0 +1,14 @@
+autoplotly dev
+---------------------
+
+* TBA
+
+autoplotly v0.1.1
+---------------------
+
+* This is essentially the same as the v0.1.0. The previous version was archived due to one of the dependencies.
+
+autoplotly v0.1.0
+---------------------
+
+* First release which includes the single `autoplotly()` function.

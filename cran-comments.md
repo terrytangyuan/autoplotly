@@ -7,7 +7,7 @@
 
 0 errors | 0 warnings | 0 note
 
-* This is the first release.
+* This is the first release. This is essentially the same as the v0.1.0. The previous version was archived since the main dependency `ggfortify` was archived.
 
 ## Reverse dependencies
 
