@@ -8,6 +8,8 @@
 \alias{\%>\%}
 \alias{reexports}
 \alias{subplot}
+\alias{reexports}
+\alias{plotly_json}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -15,6 +17,6 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{plotly}{\code{\link[plotly]{export}}, \code{\link[plotly]{\%>\%}}, \code{\link[plotly]{subplot}}}
+  \item{plotly}{\code{\link[plotly]{export}}, \code{\link[plotly]{\%>\%}}, \code{\link[plotly]{subplot}}, \code{\link[plotly]{plotly_json}}}
 }}
 
