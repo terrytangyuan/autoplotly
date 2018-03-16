@@ -2,7 +2,9 @@ Package: autoplotly
 Type: Package
 Title: Automatic Generation of Interactive Visualizations for Popular Statistical Results
 Version: 0.1.1
-Authors@R: person("Yuan", "Tang", role = c("aut", "cre"), email = "terrytangyuan@gmail.com")
+Authors@R: person("Yuan", "Tang", role = c("aut", "cre"),
+                  email = "terrytangyuan@gmail.com",
+                  comment = c(ORCID = "0000-0001-5243-233X"))
 Description: Functionalities to automatically generate interactive visualizations for popular
              statistical results supported by 'ggfortify', such as time series, PCA,
              clustering and survival analysis, with 'plotly.js' <https://plot.ly/>  and
