@@ -1,4 +1,5 @@
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/autoplotly)](https://cran.r-project.org/package=autoplotly)
+[![Travis-CI Build Status](https://travis-ci.org/rstudio/tfestimators.svg?branch=master)](https://travis-ci.org/rstudio/tfestimators) 
 
 # autoplotly
 
