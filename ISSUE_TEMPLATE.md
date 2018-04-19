@@ -1,7 +1,7 @@
-Please go to Stack Overflow for help and support with the following tags:
+Please go to Stack Overflow for help and support with a [minimal reproducible example](https://stackoverflow.com/help/mcve) and with the following tags:
 
-https://stackoverflow.com/questions/tagged/ggfortify
-https://stackoverflow.com/questions/tagged/autoplotly
+* [`#ggfortify`](https://stackoverflow.com/questions/tagged/ggfortify)
+* [`#autoplotly`](https://stackoverflow.com/questions/tagged/autoplotly)
 
 If you open a GitHub issue, here is our policy:
 
