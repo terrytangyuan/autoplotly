@@ -4,3 +4,5 @@
 .Ruserdata
 tests/testthat/*pdf
 *.DS_Store
+paper/paper.html
+paper/paper.pdf
