@@ -1,7 +1,7 @@
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/autoplotly)](https://cran.r-project.org/package=autoplotly)
 [![Travis-CI Build Status](https://travis-ci.org/terrytangyuan/autoplotly.svg?branch=master)](https://travis-ci.org/terrytangyuan/autoplotly) 
 [![DOI](https://zenodo.org/badge/116608209.svg)](https://zenodo.org/badge/latestdoi/116608209)
-
+[![DOI](http://joss.theoj.org/papers/10.21105/joss.00657/status.svg)](https://doi.org/10.21105/joss.00657)
 
 # autoplotly
 
