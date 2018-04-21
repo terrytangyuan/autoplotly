@@ -5,18 +5,8 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-```
-Package was archived on CRAN
-
-CRAN repository db overrides:
-  X-CRAN-Comment: Archived on 2018-01-27 as it depends on the archived
-    'ggfortify'.
-```
-
-This is essentially the same as the previous version v0.1.0. The previous version was archived since the main dependency `ggfortify` was archived.
+0 errors | 0 warnings | 0 note
 
 ## Reverse dependencies
 
-This is the same as the first release, so there are no reverse dependencies.
+No reverse dependencies.

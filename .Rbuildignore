@@ -1,4 +1,9 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.travis\.yml$
 README.md
 ^cran-comments\.md$
+CONDUCT.md
+CONTRIBUTING.md
+ISSUE_TEMPLATE.md
+paper/
