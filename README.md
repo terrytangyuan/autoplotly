@@ -12,7 +12,7 @@ The generated visualizations can also be easily extended using ggplot2 syntax wh
 
 ![autoplotly-demo](images/autoplotly-demo.gif)
 
-Please check out the introductory examples [here](https://terrytangyuan.github.io/2018/02/12/autoplotly-intro/).
+You can play the examples interactively [here](https://terrytangyuan.github.io/2018/02/12/autoplotly-intro/).
 
 ## Installation
 
