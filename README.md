@@ -10,6 +10,8 @@ popular statistical results supported by [ggfortify](https://github.com/sinhrks/
 package with [plotly.js](https://plot.ly) and [ggplot2](http://ggplot2.tidyverse.org/) style.
 The generated visualizations can also be easily extended using ggplot2 syntax while staying interactive. 
 
+![autoplotly-demo](images/autoplotly-demo.gif)
+
 Please check out the introductory examples [here](https://terrytangyuan.github.io/2018/02/12/autoplotly-intro/).
 
 ## Installation
