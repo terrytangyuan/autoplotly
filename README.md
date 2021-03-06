@@ -53,3 +53,11 @@ p %>% plotly::layout(annotations = list(
 ```
 
 You can `autoplotly` many other statistical results automatically with the help of [ggfortify](https://github.com/sinhrks/ggfortify). A complete list can be found [here](https://github.com/sinhrks/ggfortify#coverage).
+
+## Reference/Citation
+
+To cite `autoplotly` in publications, please use the following (available via `citation("autoplotly")`):
+
+> Yuan Tang (2018). autoplotly: An R package for automatic generation of interactive visualizations for statistical results. Journal of Open Source Software, 3(24), 657, https://doi.org/10.21105/joss.00657
+> 
+> Yuan Tang, Masaaki Horikoshi, and Wenxuan Li (2016). ggfortify: Unified Interface to Visualize Statistical Result of Popular R Packages. The R Journal, 8.2, 478-489.
