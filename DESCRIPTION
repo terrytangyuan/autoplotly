@@ -27,4 +27,4 @@ VignetteBuilder: knitr
 Suggests:
     testthat,
     knitr,
-    rmarkdown
+    markdown
