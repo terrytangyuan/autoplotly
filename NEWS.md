@@ -1,3 +1,8 @@
+autoplotly v0.1.3
+---------------------
+
+* Added `rmarkdown` to `Suggests`.
+
 autoplotly v0.1.2
 ---------------------
 
