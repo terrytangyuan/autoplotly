@@ -3,15 +3,27 @@
 \docType{package}
 \name{autoplotly}
 \alias{autoplotly}
-\alias{autoplotly}
-\alias{autoplotly-package}
 \title{Automatic Visualization of Popular Statistical Results Using 'plotly.js' and 'ggplot2'}
 \usage{
-autoplotly(object, ..., width = NULL, height = NULL, tooltip = "all",
-  dynamicTicks = FALSE, layerData = 1, originalData = TRUE,
-  source = "A", widths = NULL, heights = NULL, margin = 0.02,
-  shareX = TRUE, shareY = TRUE, titleX = shareX, titleY = shareY,
-  which_layout = "merge")
+autoplotly(
+  object,
+  ...,
+  width = NULL,
+  height = NULL,
+  tooltip = "all",
+  dynamicTicks = FALSE,
+  layerData = 1,
+  originalData = TRUE,
+  source = "A",
+  widths = NULL,
+  heights = NULL,
+  margin = 0.02,
+  shareX = TRUE,
+  shareY = TRUE,
+  titleX = shareX,
+  titleY = shareY,
+  which_layout = "merge"
+)
 }
 \arguments{
 \item{object}{The object that represents your statistical result, e.g. \code{stats::prcomp(iris[-5])}.}
@@ -42,7 +54,7 @@ would appear in the static ggplot2 image.}
 \item{originalData}{should the "original" or "scaled" data be returned?}
 
 \item{source}{a character string of length 1. Match the value of this string
-with the source argument in \code{\link[=event_data]{event_data()}} to retrieve the
+with the source argument in \code{\link[plotly:event_data]{event_data()}} to retrieve the
 event data corresponding to a specific plot (shiny apps can have multiple plots).}
 
 \item{widths}{relative width of each column on a 0-1 scale. By default all

@@ -7,7 +7,7 @@ Authors@R: person("Yuan", "Tang", role = c("aut", "cre"),
                   comment = c(ORCID = "0000-0001-5243-233X"))
 Description: Functionalities to automatically generate interactive visualizations for
              statistical results supported by 'ggfortify', such as time series, PCA,
-             clustering and survival analysis, with 'plotly.js' <https://plot.ly/>  and
+             clustering and survival analysis, with 'plotly.js' <https://plotly.com/>  and
              'ggplot2' style. The generated visualizations can also be easily extended
              using 'ggplot2' and 'plotly' syntax while staying interactive.
 License: GPL-2
@@ -22,7 +22,7 @@ Imports:
     plotly,
     ggfortify
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.0.1
+RoxygenNote: 7.0.2
 VignetteBuilder: knitr
 Suggests:
     testthat,
