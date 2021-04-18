@@ -1,3 +1,8 @@
+autoplotly v0.1.4
+---------------------
+
+* Added `markdown` to `Suggests` and fixed invalid links in examples.
+
 autoplotly v0.1.3
 ---------------------
 
