@@ -29,7 +29,7 @@ autoplotly.default <- function(
     plotly_obj <- subplot(
       lapply(ggplot_obj@plots, function(p) p + ggplot2::ggtitle("")),
       shareX = shareX,
-      shareY = shareX,
+      shareY = shareY,
       titleX = titleX,
       titleY = titleY,
       margin = margin,
