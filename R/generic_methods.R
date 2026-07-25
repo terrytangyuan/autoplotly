@@ -1,7 +1,7 @@
 #' @export
-"+.plotly" <- function(p, ggplot_element) {
+"+.plotly" <- function(e1, e2) {
   ggplot_obj <- tryCatch(
-    p$ggplot_obj + ggplot_element,
+    e1$ggplot_obj + e2,
     # Slightly better error message
     error = function(e) {
       if (grepl("Don't know how to add", e$message)) {
@@ -11,6 +11,14 @@
     }
   )
   autoplotly(ggplot_obj)
+}
+
+# Resolve Ops dispatch conflicts in favour of `+.plotly` when an S7-based
+# ggplot2 component is the right-hand operand.
+#'
+#' @rawNamespace if (getRversion() >= "4.3.0") S3method(chooseOpsMethod,plotly,.chooseOpsMethod_plotly)
+.chooseOpsMethod_plotly <- function(x, y, mx, my, cl, reverse) {
+  !reverse
 }
 
 #' Automatic Visualization of Popular Statistical Results Using 'plotly.js' and 'ggplot2'
