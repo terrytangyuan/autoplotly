@@ -6,14 +6,14 @@ result <- prcomp(df)
 test_that("autoplotly works correctly", {
   p <- autoplotly(result, data = iris, colour = 'Species', label = TRUE, label.size = 3, frame = TRUE)
   expect_true(inherits(p, "plotly"))
-  expect_true(inherits(p$ggplot_obj, "ggplot"))
+  expect_true(inherits(p$ggplot_obj, c("ggplot", "ggplot2::ggplot")))
 })
 
 test_that("autoplotly is composable with additional ggplot2 elements", {
   p <- autoplotly(result, data = iris, colour = 'Species', label = TRUE, label.size = 3, frame = TRUE)
   p <- p + ggplot2::ggtitle("This is a custom title") + ggplot2::labs(y = "Second Principal Components", x = "First Principal Components")
   expect_true(inherits(p, "plotly"))
-  expect_true(inherits(p$ggplot_obj, "ggplot"))
+  expect_true(inherits(p$ggplot_obj, c("ggplot", "ggplot2::ggplot")))
 })
 
 test_that("Errors are thrown when class is not supported by ggfortify", {
@@ -26,5 +26,5 @@ test_that("autoplotly accepts additional plotly args", {
   p <- autoplotly(result, data = iris, colour = 'Species', label = TRUE, label.size = 3, frame = TRUE,
                   tooltip = "all", dynamicTicks = FALSE, layerData = 1, originalData = TRUE, source = "A")
   expect_true(inherits(p, "plotly"))
-  expect_true(inherits(p$ggplot_obj, "ggplot"))
+  expect_true(inherits(p$ggplot_obj, c("ggplot", "ggplot2::ggplot")))
 })
