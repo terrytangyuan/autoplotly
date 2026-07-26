@@ -90,6 +90,12 @@ This package provides functionalities to automatically generate interactive visu
 many popular statistical results supported by ggfortify package with 'plotly.js' and 'ggplot2' style.
 The generated plot can also be easily extended using 'ggplot2' and 'plotly' syntax while staying interactive.
 }
+\details{
+With \code{ggplot2} 4.0, direct composition using \code{+} requires R 4.3
+or later. On R 4.1 and R 4.2, add components as a list, for example
+\code{p + list(ggplot2::labs(title = "Title"))}. Compatibility with
+\code{ggplot2} 3.x is unchanged.
+}
 \examples{
 # Automatically generate interactive plot for results produced by `stats::prcomp`
 p <- autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris,
