@@ -36,6 +36,11 @@ devtools::install_github("terrytangyuan/autoplotly")
 p <- autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris,
   colour = 'Species', label = TRUE, label.size = 3, frame = TRUE)
 
+# Include additional data columns in the tooltip
+autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris,
+  colour = "Species",
+  tooltip = c("x", "y", "colour", "Sepal.Length", "Petal.Length"))
+
 # You can apply additional ggplot2 elements to the generated interactive plot
 p +
   ggplot2::ggtitle("Principal Components Analysis") +

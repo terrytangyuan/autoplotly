@@ -37,12 +37,11 @@ you can find the documentation for the list of additional arguments via
 
 \item{height}{Height of the plot in pixels (optional, defaults to automatic sizing).}
 
-\item{tooltip}{a character vector specifying which aesthetic mappings to show
-in the tooltip. The default, "all", means show all the aesthetic mappings
-(including the unofficial "text" aesthetic). The order of variables here will
-also control the order they appear. For example, use
-\code{tooltip = c("y", "x", "colour")} if you want y first, x second, and
-colour last.}
+\item{tooltip}{A character vector specifying which aesthetic mappings or
+columns from the generated plot data to show in the tooltip. The default,
+\code{"all"}, shows all aesthetic mappings. For example,
+\code{tooltip = c("x", "y", "colour", "Sepal.Length")} also shows the
+\code{Sepal.Length} column when it is present in the fortified data.}
 
 \item{dynamicTicks}{should plotly.js dynamically generate axis tick labels?
 Dynamic ticks are useful for updating ticks in response to zoom/pan
@@ -100,6 +99,11 @@ or later. On R 4.1 and R 4.2, add components as a list, for example
 # Automatically generate interactive plot for results produced by `stats::prcomp`
 p <- autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris,
                 colour = 'Species', label = TRUE, label.size = 3, frame = TRUE)
+
+# Include additional columns from the data in the tooltip
+autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris,
+           colour = "Species",
+           tooltip = c("x", "y", "colour", "Sepal.Length", "Petal.Length"))
 
 # You can apply additional ggplot2 elements to interactive plot built using `autoplotly()`
 p +

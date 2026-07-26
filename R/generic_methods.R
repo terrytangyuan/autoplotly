@@ -36,6 +36,11 @@
 #'   object. For example, if your object is constructed from `stats::prcomp(iris[-5])`,
 #'   you can find the documentation for the list of additional arguments via
 #'   `?ggfortify:::autoplot.prcomp()`.
+#' @param tooltip A character vector specifying which aesthetic mappings or
+#'   columns from the generated plot data to show in the tooltip. The default,
+#'   `"all"`, shows all aesthetic mappings. For example,
+#'   `tooltip = c("x", "y", "colour", "Sepal.Length")` also shows the
+#'   `Sepal.Length` column when it is present in the fortified data.
 #' @inheritParams plotly::ggplotly
 #' @inheritParams plotly::subplot
 #' @export
@@ -44,6 +49,11 @@
 #' # Automatically generate interactive plot for results produced by `stats::prcomp`
 #' p <- autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris,
 #'                 colour = 'Species', label = TRUE, label.size = 3, frame = TRUE)
+#'
+#' # Include additional columns from the data in the tooltip
+#' autoplotly(prcomp(iris[c(1, 2, 3, 4)]), data = iris,
+#'            colour = "Species",
+#'            tooltip = c("x", "y", "colour", "Sepal.Length", "Petal.Length"))
 #' 
 #' # You can apply additional ggplot2 elements to interactive plot built using `autoplotly()`
 #' p +

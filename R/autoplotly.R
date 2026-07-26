@@ -37,6 +37,9 @@ autoplotly.default <- function(
       # nrows = nrow(layout),
       which_layout = which_layout)
   } else {
+    tooltip_options <- add_tooltip_columns(ggplot_obj, tooltip)
+    ggplot_obj <- tooltip_options$plot
+    tooltip <- tooltip_options$tooltip
     plotly_obj <- ggplotly(
       ggplot_obj,
       width = width,
@@ -48,6 +51,68 @@ autoplotly.default <- function(
   }
   plotly_obj$ggplot_obj <- ggplot_obj
   plotly_obj
+}
+
+add_tooltip_columns <- function(ggplot_obj, tooltip) {
+  if (!is.character(tooltip) ||
+      length(tooltip) == 0L ||
+      identical(tooltip, "all") ||
+      !is.data.frame(ggplot_obj$data)) {
+    return(list(plot = ggplot_obj, tooltip = tooltip))
+  }
+
+  mapped_aesthetics <- c(
+    names(ggplot_obj$mapping),
+    unlist(lapply(ggplot_obj$layers, function(layer) {
+      names(layer$mapping)
+    }), use.names = FALSE)
+  )
+  tooltip_columns <- unique(tooltip[
+    tooltip %in% names(ggplot_obj$data) &
+      !(tooltip %in% mapped_aesthetics)
+  ])
+
+  if (length(tooltip_columns) == 0L) {
+    return(list(plot = ggplot_obj, tooltip = tooltip))
+  }
+
+  tooltip_name <- ".autoplotly_tooltip"
+  ggplot_obj$data[[tooltip_name]] <- format_tooltip_columns(
+    ggplot_obj$data,
+    tooltip_columns
+  )
+
+  for (i in seq_along(ggplot_obj$layers)) {
+    layer_data <- ggplot_obj$layers[[i]]$data
+    if (is.data.frame(layer_data)) {
+      layer_columns <- tooltip_columns[tooltip_columns %in% names(layer_data)]
+      layer_data[[tooltip_name]] <- format_tooltip_columns(
+        layer_data,
+        layer_columns
+      )
+      ggplot_obj$layers[[i]]$data <- layer_data
+    }
+  }
+
+  .autoplotly_tooltip <- NULL
+  ggplot_obj <- ggplot_obj + ggplot2::aes(text = .autoplotly_tooltip)
+
+  tooltip[tooltip %in% tooltip_columns] <- "text"
+  list(plot = ggplot_obj, tooltip = unique(tooltip))
+}
+
+format_tooltip_columns <- function(data, columns) {
+  if (nrow(data) == 0L || length(columns) == 0L) {
+    return(rep("", nrow(data)))
+  }
+
+  vapply(seq_len(nrow(data)), function(row) {
+    values <- vapply(columns, function(column) {
+      value <- data[[column]][row]
+      paste0(column, ": ", paste(as.character(value), collapse = ", "))
+    }, character(1))
+    paste(values, collapse = "<br>")
+  }, character(1))
 }
 
 get.layout <- function(nplots, ncol, nrow) {

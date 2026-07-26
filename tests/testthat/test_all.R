@@ -28,3 +28,28 @@ test_that("autoplotly accepts additional plotly args", {
   expect_true(inherits(p, "plotly"))
   expect_true(inherits(p$ggplot_obj, c("ggplot", "ggplot2::ggplot")))
 })
+
+test_that("tooltip accepts columns from the fortified data", {
+  p <- autoplotly(
+    result,
+    data = iris,
+    colour = "Species",
+    tooltip = c("x", "y", "colour", "Sepal.Length", "Petal.Length")
+  )
+  built <- plotly::plotly_build(p)
+  tooltip_text <- unlist(lapply(built$x$data, function(trace) trace$text))
+
+  expect_true(any(grepl("Sepal.Length: 5.1", tooltip_text, fixed = TRUE)))
+  expect_true(any(grepl("Petal.Length: 1.4", tooltip_text, fixed = TRUE)))
+})
+
+test_that("existing tooltip aesthetics are unchanged", {
+  p <- autoplotly(
+    result,
+    data = iris,
+    colour = "Species",
+    tooltip = c("x", "y", "colour")
+  )
+
+  expect_false(".autoplotly_tooltip" %in% names(p$ggplot_obj$data))
+})
