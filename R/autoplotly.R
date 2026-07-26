@@ -82,20 +82,31 @@ add_tooltip_columns <- function(ggplot_obj, tooltip) {
     tooltip_columns
   )
 
+  tooltip_layer <- NULL
   for (i in seq_along(ggplot_obj$layers)) {
     layer_data <- ggplot_obj$layers[[i]]$data
-    if (is.data.frame(layer_data)) {
-      layer_columns <- tooltip_columns[tooltip_columns %in% names(layer_data)]
-      layer_data[[tooltip_name]] <- format_tooltip_columns(
-        layer_data,
-        layer_columns
-      )
-      ggplot_obj$layers[[i]]$data <- layer_data
+    if (is.data.frame(layer_data) &&
+        nrow(layer_data) == nrow(ggplot_obj$data) &&
+        all(tooltip_columns %in% names(layer_data))) {
+      tooltip_layer <- i
+      break
     }
   }
 
+  if (is.null(tooltip_layer)) {
+    return(list(plot = ggplot_obj, tooltip = tooltip))
+  }
+
+  layer_data <- ggplot_obj$layers[[tooltip_layer]]$data
+  layer_data[[tooltip_name]] <- format_tooltip_columns(
+    layer_data,
+    tooltip_columns
+  )
+  ggplot_obj$layers[[tooltip_layer]]$data <- layer_data
+
   .autoplotly_tooltip <- NULL
-  ggplot_obj <- ggplot_obj + ggplot2::aes(text = .autoplotly_tooltip)
+  text_mapping <- ggplot2::aes(text = .autoplotly_tooltip)
+  ggplot_obj$layers[[tooltip_layer]]$mapping$text <- text_mapping$text
 
   tooltip[tooltip %in% tooltip_columns] <- "text"
   list(plot = ggplot_obj, tooltip = unique(tooltip))
