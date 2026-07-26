@@ -1,3 +1,11 @@
+autoplotly v0.1.5
+---------------------
+
+* Restored composition with `ggplot2` elements under `ggplot2` 4.0 on R 4.3
+  and later.
+* Documented the list-based composition workaround for `ggplot2` 4.0 on
+  R 4.1 and R 4.2. Compatibility with `ggplot2` 3.x is unchanged.
+
 autoplotly v0.1.4
 ---------------------
 

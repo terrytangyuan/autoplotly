@@ -53,6 +53,21 @@ p %>% plotly::layout(annotations = list(
   showarrow = TRUE))
 ```
 
+### Compatibility with ggplot2 4.0
+
+Direct composition with `ggplot2` elements, such as `p + ggplot2::labs(...)`,
+is supported with `ggplot2` 4.0 on R 4.3 and later. On R 4.1 and R 4.2, pass
+the elements in a list to avoid the operator dispatch conflict:
+
+``` r
+p + list(
+  ggplot2::ggtitle("Principal Components Analysis"),
+  ggplot2::labs(y = "Second Principal Components", x = "First Principal Components")
+)
+```
+
+Compatibility with `ggplot2` 3.x is unchanged.
+
 You can `autoplotly` many other statistical results automatically with the help of [ggfortify](https://github.com/sinhrks/ggfortify). A complete list can be found [here](https://github.com/sinhrks/ggfortify#coverage).
 
 ## Reference/Citation

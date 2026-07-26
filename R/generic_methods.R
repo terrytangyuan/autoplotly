@@ -26,6 +26,11 @@
 #' @description This function provides functionality to automatically generate interactive
 #' plot for many popular statistical results supported by 'ggfortify' package using 'plotly.js' and 'ggplot2'.
 #'
+#' @details With `ggplot2` 4.0, direct composition using `+` requires R 4.3
+#'   or later. On R 4.1 and R 4.2, add components as a list, for example
+#'   `p + list(ggplot2::labs(title = "Title"))`. Compatibility with
+#'   `ggplot2` 3.x is unchanged.
+#'
 #' @param object The object that represents your statistical result, e.g. `stats::prcomp(iris[-5])`.
 #' @param ... Arguments passed to `ggfortify::autoplot` function for the applied
 #'   object. For example, if your object is constructed from `stats::prcomp(iris[-5])`,

@@ -99,6 +99,20 @@ autoplotly(
   ggplot2::labs(y = "Second Principal Component", x = "First Principal Component")
 ```
 
+With `ggplot2` 4.0, direct composition using `+` requires R 4.3 or later. On
+R 4.1 and R 4.2, supply the components in a list:
+
+```
+autoplotly(
+  prcomp(iris[c(1, 2, 3, 4)]), data = iris, colour = 'Species', frame = TRUE) +
+  list(
+    ggplot2::ggtitle("Principal Components Analysis"),
+    ggplot2::labs(y = "Second Principal Component", x = "First Principal Component")
+  )
+```
+
+Compatibility with `ggplot2` 3.x is unchanged.
+
 Similarly, we can add additional interactive components using `plotly`. The following
 example adds a custom `plotly` annotation element placed to the center of the plot with an arrow:
 
