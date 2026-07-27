@@ -73,3 +73,13 @@ test_that("tooltip columns work with layers that inherit plot data", {
 
   expect_true(any(grepl("Spline: 1", tooltip_text, fixed = TRUE)))
 })
+
+test_that("tooltip data is cleaned up when no suitable layer exists", {
+  plot_data <- data.frame(x = seq_len(3), custom = letters[seq_len(3)])
+  ggplot_obj <- ggplot2::ggplot(plot_data, ggplot2::aes(x = x)) +
+    ggplot2::geom_vline(xintercept = 2)
+
+  result <- autoplotly:::add_tooltip_columns(ggplot_obj, "custom")
+
+  expect_false(".autoplotly_tooltip" %in% names(result$plot$data))
+})

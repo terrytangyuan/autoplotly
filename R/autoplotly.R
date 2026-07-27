@@ -109,6 +109,7 @@ add_tooltip_columns <- function(ggplot_obj, tooltip) {
   }
 
   if (is.null(tooltip_layer)) {
+    ggplot_obj$data[[tooltip_name]] <- NULL
     return(list(plot = ggplot_obj, tooltip = tooltip))
   }
 
