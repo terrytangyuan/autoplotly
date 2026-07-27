@@ -100,7 +100,7 @@ add_tooltip_columns <- function(ggplot_obj, tooltip) {
     )
     for (i in seq_along(ggplot_obj$layers)) {
       layer <- ggplot_obj$layers[[i]]
-      if (inherits(layer$data, "waiver") &&
+      if ((is.null(layer$data) || inherits(layer$data, "waiver")) &&
           !inherits(layer$geom, reference_geoms)) {
         tooltip_layer <- i
         break
