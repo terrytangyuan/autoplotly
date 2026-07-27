@@ -61,3 +61,15 @@ test_that("existing tooltip aesthetics are unchanged", {
 
   expect_false(".autoplotly_tooltip" %in% names(p$ggplot_obj$data))
 })
+
+test_that("tooltip columns work with layers that inherit plot data", {
+  basis <- splines::ns(seq_len(100), df = 4)
+  p <- autoplotly(
+    basis,
+    tooltip = c("x", "y", "Spline")
+  )
+  built <- plotly::plotly_build(p)
+  tooltip_text <- unlist(lapply(built$x$data, function(trace) trace$text))
+
+  expect_true(any(grepl("Spline: 1", tooltip_text, fixed = TRUE)))
+})

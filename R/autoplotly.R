@@ -94,15 +94,32 @@ add_tooltip_columns <- function(ggplot_obj, tooltip) {
   }
 
   if (is.null(tooltip_layer)) {
+    reference_geoms <- c(
+      "GeomPolygon", "GeomRibbon", "GeomRect",
+      "GeomSegment", "GeomVline", "GeomHline"
+    )
+    for (i in seq_along(ggplot_obj$layers)) {
+      layer <- ggplot_obj$layers[[i]]
+      if (inherits(layer$data, "waiver") &&
+          !inherits(layer$geom, reference_geoms)) {
+        tooltip_layer <- i
+        break
+      }
+    }
+  }
+
+  if (is.null(tooltip_layer)) {
     return(list(plot = ggplot_obj, tooltip = tooltip))
   }
 
   layer_data <- ggplot_obj$layers[[tooltip_layer]]$data
-  layer_data[[tooltip_name]] <- format_tooltip_columns(
-    layer_data,
-    tooltip_columns
-  )
-  ggplot_obj$layers[[tooltip_layer]]$data <- layer_data
+  if (is.data.frame(layer_data)) {
+    layer_data[[tooltip_name]] <- format_tooltip_columns(
+      layer_data,
+      tooltip_columns
+    )
+    ggplot_obj$layers[[tooltip_layer]]$data <- layer_data
+  }
 
   .autoplotly_tooltip <- NULL
   text_mapping <- ggplot2::aes(text = .autoplotly_tooltip)
