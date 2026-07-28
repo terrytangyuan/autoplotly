@@ -1,3 +1,9 @@
+autoplotly v0.1.6
+---------------------
+
+* Added support for including columns from fortified plot data in custom
+  tooltips ([#10](https://github.com/terrytangyuan/autoplotly/pull/10)).
+
 autoplotly v0.1.5
 ---------------------
 
