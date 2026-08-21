@@ -1,3 +1,10 @@
+autoplotly v0.1.7
+---------------------
+
+* Replaced deprecated `citEntry()` calls with `bibentry()` in the package
+  citation metadata.
+* Updated the ggfortify R Journal paper link to its permanent location.
+
 autoplotly v0.1.6
 ---------------------
 

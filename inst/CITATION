@@ -1,25 +1,29 @@
 citHeader("To cite autoplotly in publications, please use:")
 
-citEntry(entry = "article",
-  author = "Yuan Tang",
+bibentry(bibtype = "Article",
+  author = person("Yuan", "Tang"),
   title = "autoplotly: An R Package for Automatic Generation of Interactive Visualizations for Statistical Results",
   journal = "Journal of Open Source Software",
   year = "2018",
-  issue = 24,
-  volume = 3,
+  number = "24",
+  volume = "3",
+  pages = "657",
   url = "https://doi.org/10.21105/joss.00657",
-  textVersion = 'Yuan Tang (2018). autoplotly: An R package for automatic generation of interactive visualizations for statistical results. Journal of Open Source Software, 3(24), 657, https://doi.org/10.21105/joss.00657'
+  doi = "10.21105/joss.00657"
 )
 
-citEntry(entry = "article",
-  author = "Yuan Tang, Masaaki Horikoshi, and Wenxuan Li",
+bibentry(bibtype = "Article",
+  author = c(
+    person("Yuan", "Tang"),
+    person("Masaaki", "Horikoshi"),
+    person("Wenxuan", "Li")
+  ),
   title = "ggfortify: Unified Interface to Visualize Statistical Result of Popular R Packages",
   journal = "The R Journal",
   year = "2016",
-  number = 2,
-  volume = 8,
+  number = "2",
+  volume = "8",
   pages = "474--485",
   url = "https://doi.org/10.32614/RJ-2016-060",
-  doi = "10.32614/RJ-2016-060",
-  textVersion = 'Yuan Tang, Masaaki Horikoshi, and Wenxuan Li. "ggfortify: Unified Interface to Visualize Statistical Result of Popular R Packages." The R Journal 8.2 (2016): 478-489.'
+  doi = "10.32614/RJ-2016-060"
 )
