@@ -190,7 +190,7 @@ community even better!
 
 * [autoplotly Github repository](https://github.com/terrytangyuan/autoplotly)
 * [ggfortify Github repository](https://github.com/sinhrks/ggfortify)
-* [ggfortify R Journal paper](https://journal.r-project.org/news/RJ-2016-2-tang-horikoshi-li/RJ-2016-2-tang-horikoshi-li.pdf)
+* [ggfortify R Journal paper](https://journal.r-project.org/articles/RJ-2016-060/RJ-2016-060.pdf)
 * Tyler's excellent post [PCA in a tidy(verse) framework](https://tbradley1013.github.io/2018/02/01/pca-in-a-tidy-verse-framework/)
 demonstrating the extensibility using the combination of `broom`, `ggplot2`, and `ggfortify`.
 * [一行R代码实现繁琐的可视化](https://terrytangyuan.github.io/2015/11/24/ggfortify-intro/)
